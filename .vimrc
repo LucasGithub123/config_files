@@ -1,21 +1,29 @@
+""" APPEARANCE
+
 " enable syntax highlighting
 syntax on
 " and select the colour scheme
 colorscheme molokai
+" dunno if this actually does anything
+set background=dark
 " number of visual spaces per tab
 set tabstop=4
 " number of visual spaces when you press >> or << or ==
 set shiftwidth=4
-" dunno if this actually does anything
-set background=dark
+
+""" BEHAVIOUR
+
+" To define a mapping which uses the 'mapleader' variable, the special string
+"<Leader>" can be used.  It is replaced with the string value of 'mapleader'.
+"If 'mapleader' is not set or empty, a backslash is used instead.
+let mapleader="\<Space>"
 " auto tab completion
 set autoindent
 " auto brace and tab completion
 inoremap {<CR> {<CR>}<Esc>ko<tab>
-let mapleader="\<Space>"
 " show line numbers
 set number
-" Use \k and \l to go to the previous and next tab.
+" Use <leader>k and <leader>l to go to the previous and next tab.
 nnoremap <leader>l :tabn<CR>
 nnoremap <leader>k :tabp<CR>
 " highlight matching [{()}]
@@ -28,5 +36,6 @@ endif
 set incsearch           
 " highlight matches
 set hlsearch            
-" Press \ and then space to turn off search highlight
+" Press <leader><space> to turn off search highlight
+" So if <leader> is space then this means hit space twice.
 nnoremap <leader><space> :nohlsearch<CR>
