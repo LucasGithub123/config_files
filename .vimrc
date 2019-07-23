@@ -57,6 +57,10 @@ nnoremap <leader>w ve"0p
 nnoremap <leader>sv :source ~/.vimrc<CR> :echo "source ~/.vimrc"<CR>
 " Force save a Session.vim
 nnoremap <leader>s :mksession!<CR> :echo "Session.vim saved"<CR>
+" Copy visual selection to clipboard. -c instead of c is NOT a typo.
+vnoremap <leader>y :w !xclip -i -sel c<CR><CR>
+" Insert new line below current one and paste the clipboard to it
+vnoremap <leader>p :r !xclip -o -sel -c<CR><CR>
 
 """ IDE-LIKE FEATURES
 
